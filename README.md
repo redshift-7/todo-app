@@ -1,79 +1,53 @@
-DESCRIPTION:
+# TODO APP
 
-TODO APP
-
-DEMO online - GitHub Pages:
-
-// TODO
+Tech stack: Spring Boot 3, Postgres, Liquibase, Maven, React, TypeScript, GitHub Actions
 
 
-CI/CD solution:
+<img src="todo-app.png" alt="Todo app UI screenshot"/>
 
-// TODO
+### Requirements:
 
-DEMO screenshots:
+Java 17
 
-// TODO
+Docker Desktop (https://www.docker.com/products/docker-desktop/)
 
-DEMO video on youtube:
+Node.js 18 (https://nodejs.org/en/download)
 
-// TODO
+## How to run
 
-DEMO article / tutorial:
+### Backend:
 
-// TODO
+    docker-compose up -d --wait && mvnw spring-boot:run
 
-How to run locally:
+### React frontend
 
+    cd src\main\frontend
+    npm install
+    npm run start
 
+## Frontend URL
 
+    http://localhost:8081/todo-app/
 
-## Run Spring Boot application
+## Login credentials
 
-Docker must be running.
+    username: John
+    password: JohnPassword
 
-docker-compose up -d --wait & mvnw spring-boot:run
+    username: Alice
+    password: AlicePassword
 
-## Install and run React application
+## CI/CD pipeline
+[![Node.js CI](https://github.com/redshift-7/todo-app/actions/workflows/node.js.yml/badge.svg)](https://github.com/redshift-7/todo-app/actions/workflows/node.js.yml)
 
-`npm install`
+    https://github.com/redshift-7/todo-app/actions
 
-`npm run start`
+### Frontend deployed to GitHub Pages
 
-References and tools:
+    https://redshift-7.github.io/todo-app/
 
-### Set port
-.env
-```
-PORT=8081
-```
+## Tracing
 
---------------------------
-Problem:
-    Github Pages. client-side routing.
-    Routing with React Router
-
-Solution:
-
-    https://create-react-app.dev/docs/deployment/#notes-on-client-side-routing
-    https://github.com/rafgraph/spa-github-pages
-    
-    
-    Code
-    commits:
-
---------------------------
-
-Problem:
-    Deployment to GitHub
-    
-
-Solution:
-    https://create-react-app.dev/docs/deployment/#step-1-add-homepage-to-packagejson
-    
-    Screenshots of GitHub configuration:
-
---------------------------
-Problem:
-
-Solution:
+Actuator endpoint:
+        
+    http://localhost:8080/actuator/httpexchanges

@@ -1,0 +1,39 @@
+server:
+  port: 8080
+spring:
+  security:
+    user:
+      name: admin
+      password: adminpassword
+  mvc:
+    dispatch-options-request: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/task_db?useSSL=false
+    username: postgres
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+  docker:
+    compose:
+      enabled: true
+      file: docker-compose.yml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    trace:
+      enabled: true
+
+app:
+  jwtSecret: Wp2TfU2KD2gEjjnWa5mqJNz5fDgh9GmCQ6j2AbQDfvxNHs9ZCjHecmdb6WtYAtew
+  jwtExpirationMs: 86400000
